@@ -18,7 +18,6 @@ var server = require('gulp-server-livereload');
 var serve = require('gulp-serve');
 var pngquant = require('imagemin-pngquant');
 var babel = require("gulp-babel");
-var react = require('gulp-react');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var browserSync = require('browser-sync');
