@@ -13,6 +13,7 @@
   "author": "gq",
   "license": "MIT",
   "dependencies": {
+    "animate.css": "^3.5.1",
     "bower": "^1.7.2",
     "gulp": "~3.9.0",
     "postcss": "^5.0.0"

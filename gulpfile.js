@@ -54,31 +54,10 @@ var colorShort = require('postcss-color-short');
 //postcss编译
 gulp.task('postcss', function () {
   var processors = [
-        cssnano,
-        will_change,
-        autoprefixer({browsers:'safari >= 9, ie >= 11'}),
-        cssnext,
-        atImport,
-        precss,
-        bem,
-        // color_rgba_fallback,
-        // opacity,
-        pseudoelements,
-        // vmin,
-        pixrem,  
-        mqpacker,
-        // alias,
-        // crip,
-        magician,
-        triangle,
-        circle,
-        linkColors,
-        center,
-        clearfix,
-        position,
-        size,
-        // verthorz,
-        colorShort,
+      will_change,
+      autoprefixer,
+      atImport,
+      precss
         
   ];
   return gulp.src('./app/postcss/*.css')

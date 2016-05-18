@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>input clear</title>
+  <style>
+    .input {
+      padding: 5px;
+      margin: 0;
+      border: 1px solid #beceeb;
+    }
+    .clear {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      margin: 3px 0 0 -20px;
+      display: none;
+    }
+    .input:valid + .clear {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  输入任意内容：<input class="input" required><a class="clear">x</a>
+</body>
+</html>

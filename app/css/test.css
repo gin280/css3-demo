@@ -1,1 +1,12 @@
-*{margin:0;padding:0}html{box-sizing:border-box}*, :after, :before{box-sizing:inherit}body{max-width:160px;max-width:10rem;margin:0 auto;overflow:hidden}a:hover{text-decoration:none}ul{list-style:none}//font-size set div, div{font-size:12px}[data-dpr="2"] div{font-size:24px}[data-dpr="3"] div{font-size:36px}.font14{font-size:14px}[data-dpr="2"] .font14{font-size:28px}[data-dpr="3"] .font14{font-size:42px}.font16{font-size:16px}[data-dpr="2"] .font16{font-size:32px}[data-dpr="3"] .font16{font-size:48px}.font18{font-size:18px}[data-dpr="2"] .font18{font-size:36px}[data-dpr="3"] .font18{font-size:54px}.font20{font-size:20px}[data-dpr="2"] .font20{font-size:40px}[data-dpr="3"] .font20{font-size:60px}.g-wrap{position:absolute;top:0;right:0;bottom:0;left:0;background-color:#f5294c;overflow-y:auto;padding-bottom:2.133px;padding-bottom:.133333rem}.g-til{width:160px;width:10rem;height:104.533px;height:6.533333rem;background:url(../img/1.jpg) no-repeat;background-size:contain;margin:0 auto}.m-list li{width:155.306px;width:9.706667rem;height:42.666px;height:2.666667rem;margin:0 auto;background-color:#fff;margin-bottom:1px}.goods{width:37.546px;width:2.346667rem;height:37.546px;height:2.346667rem;line-height:37.546px;line-height:2.346667rem;font-size:0;float:left;margin-top:2.56px;margin-top:.16rem}.goods img{width:100%;height:auto;vertical-align:middle;border:0}.goods-details{height:42.666px;height:2.666667rem;padding-top:2.56px;padding-top:.16rem;padding-left:40.96px;padding-left:2.56rem;position:relative}.goods-tag{display:inline-block;padding:0.853px 1.28px;padding:.053333rem .08rem;background-color:#f5294c;color:#fff;text-align:center;border-radius:2px;vertical-align:middle}.goods-dis, .goods-price{color:#f5294c;vertical-align:middle}.goods-sold{color:#fd5100}.btn{position:absolute;padding:1.066px 4.266px;padding:.066667rem .266667rem;text-align:center;background-color:#f5294c;color:#fff;right:3.2px;right:.2rem;bottom:3.2px;bottom:.2rem;border-radius:2px}
+p {
+  border: 1px solid #eee;
+  margin: auto;
+  min-width: 10%;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 10px;
+}
+p img {
+  width: 100%;
+}

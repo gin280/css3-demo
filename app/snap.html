@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snap</title>
+</head>
+<body>
+<svg id='svg' width='600' height='600'></svg>
+<svg id='pattern'></svg>
+<script src="//cdn.bootcss.com/snap.svg/0.4.1/snap.svg-min.js"></script>  
+<script>
+  var s = Snap('#svg');
+  var bigCircle = s.circle(150, 150, 100);
+  bigCircle.attr({
+    fill: '#bada55',
+    stroke: '#000',
+    strokeWidth: 5
+  });
+  var smallCircle = s.circle(100, 150, 70);
+  var discs = s.group(smallCircle, s.circle(200, 150, 70));
+  discs.attr({
+    fill: '#fff'
+  });
+  bigCircle.attr({
+    mask: discs
+  });
+  smallCircle.animate({r: 50}, 2000);
+  discs.select('circle:nth-child(2)').animate({r:50}, 2000);
+  //now lets create pattern
+  var p = s.path('M10-5-10,15M15,0,0,15,M0-5-20,15').attr({
+    fill:'none',
+    stroke: '#bada55',
+    strokeWidth: 5
+  });
+  p = p.pattern(0,0,10,10);
+  // then use is as a fill on big circle
+  bigCircle.attr({
+    fill: p
+  });
+  // discs.attr({
+  //   fill: Snap('#pattern')
+  // });
+  //let change fill of circles to gradient
+  //this string means relative radial gradient
+  // from white to black
+  discs.attr({
+    fill: 'r()#fff-#000'
+  });
+  //note that you have two gradients for each circle
+  //if we want them to share one gradient
+  //we need to use abolute gradient with capital R
+  discs.attr({
+    fill: 'R(150,150,100)#fff-#000'
+  });
+  //of course we could animate color as well
+  p.select('path').animate({stroke: '#f00'}, 2000);
+  //now lets load external SVG file
+
+  //writing text as simple as:
+  s.text(200, 100, 'Snap.svg');
+  //Provide an array of strings (or arrays), to generate tspans
+  var t = s.text(200,120, ['snap', '.', 'svg']);
+  t.selectAll('tspan:nth-child(3)').attr({
+    fill: '#900',
+    'font-size': '20px'
+  });
+</script>
+</body>
+</html>

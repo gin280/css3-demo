@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>text rain</title>
+</head>
+<body>
+  <canvas id="v"></canvas>
+
+<script>
+  var v = document.getElementById('v')
+  var ctx = v.getContext('2d')
+  v.width = window.innerWidth
+  v.height = window.innerHeight
+  var str = 'zxyzygftxfq' 
+  str.split('')
+  console.log(Math.random()*str.length)
+  var fontsize = 20
+  var columns = v.width/fontsize
+  var drop = []
+  for(var x = 0; x < columns; x++) {
+    drop[x] = 0
+  }
+  function drap () {
+    ctx.fillStyle = 'rgba(0,0,0,0.07)'
+    ctx.fillRect(0,0,v.width,v.height)
+    ctx.fillStyle = '#0f0'
+    ctx.font = fontsize + 'px arial'
+    for (var i = 0; i < drop.length; i++) {
+      var text = str[Math.floor(Math.random()*str.length)]
+
+      ctx.fillText(text, i*fontsize, drop[i]*fontsize)
+      drop[i]++
+      if (drop[i]*fontsize > v.height && Math.random() > .9) {
+        drop[i] = 0
+      }
+
+    }
+  }
+  setInterval(drap,20)
+</script>
+</body>
+</html>
