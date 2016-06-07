@@ -1,15 +1,57 @@
 body {
-	background-color: pink;
+	background-color: #4390e7;
+	background-image: radial-gradient(#3e8be2 15%, transparent 16%),
+	radial-gradient(#3e8be2 15%, transparent 16%);
+	background-size:30px 30px;
+	background-position: 0 0, 15px 15px;
 }
 
 img {
-	max-width: 100%;
 	height: auto;
 }
 
 .content {
-	.content1 {
+	.c1, .c2 {
 		display: flex;
-		flex-flow: row nowrap; 
+		flex-flow: row wrap; 
+		justify-content: space-between;
+		.title1 {
+			margin:0 auto;
+			width: 75%;
+			align-self: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			img {
+			}
+		}
+		a {
+			flex: 0 0 49.5%;
+			margin-bottom: .3rem;
+		}
+	}
+	.c3 {
+		display: flex;
+		flex-flow: column wrap; 
+		justify--content: center;
+		.title2 {
+			padding-top: 20px;
+			margin-bottom: 20px;
+			margin: 0 auto;
+			width: 75%;
+			img {
+				// display: block;
+				// max-width: 90%;
+			}
+		}
+		a {
+			margin-top: 5%;
+			&:last-child {
+				margin-bottom: 30%;
+			}
+			img {
+				display: block;
+				max-width: 90%;
+			}
+		}
 	}
 }
