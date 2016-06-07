@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="tracker-id" content="yundong">
+    <title>送父亲一份健康好礼</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="border.css">
+    <link rel="stylesheet" href="../css/fatherday.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="banner">
+        <img src="img/banner.png" alt="">
+    </header>
+    <div class="content">
+        <div class="c1">
+            <a href="javascript:;">
+                <img src="img/p1.png" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="img/p2.png" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="img/p3.png" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="img/p4.png" alt="">
+            </a>
+        </div>
+        <div class="c2">
+            <div class="title1">
+                <img src="img/t1.png" alt="">
+            </div>
+            <a href="javascript:;">
+                <img src="img/p5.png" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="img/p6.png" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="img/p7.png" alt="">
+            </a>
+            <a href="javascript:;">
+                <img src="img/p8.png" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+<script src="jquery.js"></script>
+<script src="dom.js"></script>
+<script src="common.js"></script>
+<script src="http://static.91jkys.com/telescope/build/Telescope.js"></script>
+<script>
+    $(function() {
+        initFn = function () {
+            $(".imgLoad").picLazyLoad({//图片懒加载
+                threshold: 400,
+                placeholder: ''
+            });
+            //alert("test");
+            var users={};
+            users=userInfo;
+            var shareValue = {
+                link: SystemUtil.getResourceUrl()+'html/shai/',
+                imageUrl: SystemUtil.getResourceUrl() + 'html/shai/img/icon.png',
+                title: $('title').text(),
+                content: '送父亲一份健康好礼'
+            };
+            SystemUtil.share(shareValue);
+            window.inStart(users);
+            var inApp = SystemUtil.isNull(SystemUtil.getUrlParam('inApp')) ? false : true;
+            var mallUserInfo=JSON.parse(SystemUtil.getUrlParam("userInfo"));
+//        console.log(mallUserInfo);
+            if(mallUserInfo){
+                var uid=users.uid==-1000?mallUserInfo.uid:users.uid;
+            }else{
+                var uid=users.uid;
+            }
+//        上面的商品
+            $(".product li").each(function () {
+                var $this=$(this);
+                $this.on("click",function () {
+                    if (!inApp){
+                        $.modalAlert({message:'请先下载并进入掌上糖医APP！'});
+                        return;
+                    }
+                    else{
+                        var code=$this.attr("code-data");
+                        NativeCallAction.method("go_product_detail",code);
+                    }
+                });
+            });
+
+            //跳转到商城首页
+            $(".goMallbtn").on("click", function () {
+                if (!inApp){
+                    $.modalAlert({message:'请先下载并进入掌上糖医APP！'});
+                    return;
+                }else{
+                    NativeCallAction.method("page-mall",'');
+                }
+            });
+            //领取优惠券
+            $(".coupon li").each(function () {
+                $(this).on("click", function () {
+                    var price=$(this).attr("coupon-price");
+
+                    if (!inApp){
+                        $.modalAlert({message:'请先下载并进入掌上糖医APP！'});
+                        return;
+                    }
+
+                    if(uid==-1000){
+                        $.modalAlert({message:'请先进行登录！'});
+                        return;
+                    }
+                    else{
+                        var postData = {
+                            action:'coupons',
+                            act_code:'shizhi',
+                            //userId:'1',
+                            couponPrice: price,
+                            userId:uid
+//                        userId:119
+                        };
+                        $.post("http://api3.91jkys.com:8096/", JSON.stringify(postData), function(data) {
+                            if(data.code=="2000" && price=="30"){
+                                $.modalAlert({message:'恭喜您获得30元商城优惠券！'});
+                                return;
+                            }
+                            if(data.code=="2000" && price=="60"){
+                                $.modalAlert({message:'恭喜您获得60元商城优惠券！'});
+                                return;
+                            }
+                            if(data.code=="2000" && price=="100"){
+                                $.modalAlert({message:'恭喜您获得100元商城优惠券！'});
+                                return;
+                            }
+                            if(data.code=="7100"){
+                                $.modalAlert({message:'您已经领取过优惠券！'});
+                                return;
+
+                            }
+                            if(data.code=="100"){
+                                $.modalAlert({message:'亲,抱歉,优惠券已领完！'});
+                                return;
+                            }
+                            if(data.code=="3000"){
+                                alert("系统错误.");
+                            }
+                        });
+                    }
+                });
+            });
+            if (!inApp) shareTimeHandle = setTimeout(function () {
+                $.share($('.post-footer'), false);
+            }, 1000);
+            function versionControl(){
+                $.modalAlert({message:'请更新至最新版本才可查看新商品哦！'});
+                return ;
+            }
+        }
+        if(SystemUtil.getUrlParam("userInfo")){
+            initFn();
+            $(".goMallbtn").hide();
+        }
+    });
+</script>
+</body>
+</html>
