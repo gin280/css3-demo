@@ -1,10 +1,17 @@
-p {
-  border: 1px solid #eee;
-  margin: auto;
-  min-width: 10%;
-  width: min-content;
-  padding: 10px;
-  img {
-    width: 100%;
+.test {
+  width: 350px;
+  height: 350px;
+  background-image: url('http://cdn1.w3cplus.com/cdn/farfuture/8aizos28KhGj5cNTESe1RIrDxVgO_SLPNma7xnZ3iDM/mtime:1436444744/sites/default/files/blogs/2015/1507/naxos-greece-big.jpg');
+  background-size:auto 100%;
+  animation: test 10s linear infinite alternate;
+  animation-play-state:paused;
+  &:hover, &:focus {
+    animation-play-state: running;
+  }
+}
+
+@keyframes test {
+  to {
+    background-position: 100% 0;
   }
 }

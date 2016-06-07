@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>p2</title>
+  <link rel="stylesheet" href="//cdn.bootcss.com/weui/0.4.2/style/weui.min.css">
+  <style>
+  .mask {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color:#703434;
+    line-height: 70px;
+    
+  }
+  .mask p span {
+    color: #ddd;
+    margin-left: 15px;
+  }
+  .mask p button {
+    position: absolute;
+    top: 20%;
+    right: 30px;
+    background-color: #F5A433;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 3%;
+    border-radius:5px;
+  }
+  .weui_cells_title {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: .77em;
+    padding-bottom: .77em;
+
+  }
+  .weui_cell_ft {
+    color: #000 !important;
+  }
+  </style>
+</head>
+<body>
+<div class="main">
+  <div class="weui_cells_title">订单结算</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>收货信息</p>
+        </div>
+        <div class="weui_cell_ft">
+            成员出
+            <span>1802451524</span>
+        </div>
+    </div>
+</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>配送时间</p>
+        </div>
+        <div class="weui_cell_ft">
+            9：00 - 9：30
+        </div>
+    </div>
+</div>
+<div class="weui_cells weui_cells_access">
+
+    <a class="weui_cell" href="javascript:;">
+        <div class="weui_cell_hd">
+            <img src="http://img5.imgtn.bdimg.com/it/u=2026257126,3002325057&fm=21&gp=0.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>商品名称</p>
+        </div>
+        <div class="">
+            个数
+            <span>40.00 RMB</span>
+        </div>
+    </a>
+    <a class="weui_cell" href="javascript:;">
+        <div class="weui_cell_hd">
+            <img src="http://img5.imgtn.bdimg.com/it/u=2026257126,3002325057&fm=21&gp=0.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>商品名称</p>
+        </div>
+        <div class="">
+            个数
+            <span>40.00 RMB</span>
+        </div>
+    </a>
+</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>配送费用</p>
+        </div>
+        <div class="weui_cell_ft">
+            40.00 RMB
+        </div>
+    </div>
+</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>总价格</p>
+        </div>
+        <div class="weui_cell_ft">
+            40.00 RMB
+        </div>
+    </div>
+</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>优惠码</p>
+        </div>
+        <div class="weui_cell_ft">
+            <input type="text" style="width: 35%;padding: 2% 4%"><button style="padding: 2% 4%;">使用</button>
+        </div>
+    </div>
+</div>
+<div class="weui_cells">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>支付方式</p>
+        </div>
+        <div class="weui_cell_ft">
+            余额抵扣 <input type="radio" name="1">
+            微信支付 <input type="radio" name="1">
+        </div>
+    </div>
+</div>
+</div>
+<div class="mask">
+  <p><span>共计 40.00 元</span><button>确认付款</button></p>
+</div>
+</body>
+</html>
