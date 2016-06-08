@@ -15,3 +15,12 @@
     background-position: 100% 0;
   }
 }
+
+div {
+	width: 100px;
+	position: absolute;
+	left: 0;
+	height: 100px;
+	border-radius:50%;
+	background-color: pink;
+}

@@ -57,8 +57,8 @@ gulp.task('postcss', function () {
       will_change,
       autoprefixer,
       atImport,
-      precss
-        
+      precss,
+      cssnano  
   ];
   return gulp.src('./app/postcss/*.css')
     .pipe(postcss(processors))

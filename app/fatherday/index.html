@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="tracker-id" content="fatherday">
+    <title>送父亲一份健康好礼</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="border.css">
+    <link rel="stylesheet" href="../css/fatherday.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="banner">
+        <img src="img/banner.png" alt="">
+    </header>
+    <div class="content">
+        <div class="c1">
+            <a href="javascript:;" code-data="3325">
+                <img src="img/p1.png" alt="">
+            </a>
+            <a href="javascript:;" code-data="1324">
+                <img src="img/p2.png" alt="">
+            </a>
+            <a href="javascript:;" code-data="1324">
+                <img src="img/p3.png" alt="">
+            </a>
+            <a href="javascript:;" code-data="3325">
+                <img src="img/p4.png" alt="">
+            </a>
+        </div>
+        <div class="c2">
+            <div class="title1">
+                <img src="img/t1.png" alt="">
+            </div>
+            <a href="http://www.jianke.com/product/2476.html" code-data="3454">
+                <img src="img/p5.png" alt="">
+            </a>
+            <a href="http://www.jianke.com/product/3084.html" code-data="2321">
+                <img src="img/p6.png" alt="">
+            </a>
+            <a href="http://www.jianke.com/product/6740.html" code-data="1764">
+                <img src="img/p7.png" alt="">
+            </a>
+            <a href="http://www.jianke.com/product/271383.html" code-data="3331">
+                <img src="img/p8.png" alt="">
+            </a>
+        </div>
+        <div class="c3">
+            <div class="title2"><img src="img/t2.png" alt=""></div>
+            <a href="http://www.ehaoyao.com/product-4147.html" code-data="3454">
+                <img src="img/p9.png" alt="">
+            </a>
+            <a href="http://www.ehaoyao.com/product-4309.html" code-data="2321">
+                <img src="img/p10.png" alt="">
+            </a>
+        </div>
+    </div>
+    <footer><img src="img/bottom.png" alt=""></footer>
+</div>
+<script src="jquery.js"></script>
+<script src="dom.js"></script>
+<script src="common.js"></script>
+<script src="http://static.91jkys.com/telescope/build/Telescope.js"></script>
+<script>
+    $(function() {
+        initFn = function () {
+            $(".imgLoad").picLazyLoad({//图片懒加载
+                threshold: 400,
+                placeholder: ''
+            });
+            //alert("test");
+            var users={};
+            users=userInfo;
+            var shareValue = {
+                link: SystemUtil.getResourceUrl()+'html/fatherday/',
+                imageUrl: SystemUtil.getResourceUrl() + 'html/fatherday/img/icon.png',
+                title: $('title').text(),
+                content: '送父亲一份健康好礼'
+            };
+            SystemUtil.share(shareValue);
+            window.inStart(users);
+            var inApp = SystemUtil.isNull(SystemUtil.getUrlParam('inApp')) ? false : true;
+            var mallUserInfo=JSON.parse(SystemUtil.getUrlParam("userInfo"));
+//        console.log(mallUserInfo);
+            if(mallUserInfo){
+                var uid=users.uid==-1000?mallUserInfo.uid:users.uid;
+            }else{
+                var uid=users.uid;
+            }
+//        上面的商品
+            $("a").each(function () {
+                var $this=$(this);
+                $this.on("click",function () {
+                    if (!inApp){
+                        $.modalAlert({message:'请先下载并进入掌上糖医APP！'});
+                        return;
+                    }
+                    else{
+                        var code=$this.attr("code-data");
+                        NativeCallAction.method("go_product_detail",code);
+                    }
+                });
+            });
+
+            //跳转到商城首页
+            $(".goMallbtn").on("click", function () {
+                if (!inApp){
+                    $.modalAlert({message:'请先下载并进入掌上糖医APP！'});
+                    return;
+                }else{
+                    NativeCallAction.method("page-mall",'');
+                }
+            });
+        }
+        if(SystemUtil.getUrlParam("userInfo")){
+            initFn();
+            $(".goMallbtn").hide();
+        }
+    });
+</script>
+</body>
+</html>
