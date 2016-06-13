@@ -67,61 +67,38 @@
 <script src="common.js"></script>
 <script src="http://static.91jkys.com/telescope/build/Telescope.js"></script>
 <script>
-    $(function() {
-        initFn = function () {
-            $(".imgLoad").picLazyLoad({//图片懒加载
-                threshold: 400,
-                placeholder: ''
-            });
-            //alert("test");
-            var users={};
-            users=userInfo;
-            var shareValue = {
-                link: SystemUtil.getResourceUrl()+'html/fatherday/',
-                imageUrl: SystemUtil.getResourceUrl() + 'html/fatherday/img/icon.png',
-                title: $('title').text(),
-                content: '送父亲一份健康好礼'
+    initFn = function () {
+        var shareValue = {
+            link: SystemUtil.getResourceUrl()+'html/jianke/index.html', 
+            imageUrl: SystemUtil.getResourceUrl() + 'html/jianke/img/icon.png',
+            title: $('title').text(), 
+            content: '控糖药品 辅助降糖'
             };
             SystemUtil.share(shareValue);
-            window.inStart(users);
-            var inApp = SystemUtil.isNull(SystemUtil.getUrlParam('inApp')) ? false : true;
-            var mallUserInfo=JSON.parse(SystemUtil.getUrlParam("userInfo"));
-//        console.log(mallUserInfo);
-            if(mallUserInfo){
-                var uid=users.uid==-1000?mallUserInfo.uid:users.uid;
+            }   
+  $(function() { 
+        window.inStart(userInfo);   
+        var inApp = SystemUtil.isNull(SystemUtil.getUrlParam('inApp')) ? false : true;
+          if (!inApp) shareTimeHandle = setTimeout(function () {
+            $.share($('.post-footer'), false); 
+          }, 1000);
+          
+$('.photoList li').on('click',function(){
+       if (!inApp){
+        $.modalAlert({message:'请先下载并进入掌上糖医APP！'});
+         return; 
+        }else{
+            var version = SystemUtil.isNull(userInfo.appver) ? 0 : userInfo.appver.replace(/\./g,'');
+            var index=$(this).attr('data');
+            var action='go_product_detail';
+            if(version=='400'){
+                versionControl();
             }else{
-                var uid=users.uid;
+                NativeCallAction.method(action,index);
             }
-//        上面的商品
-            $("a").each(function () {
-                var $this=$(this);
-                $this.on("click",function () {
-                    if (!inApp){
-                        $.modalAlert({message:'请先下载并进入掌上糖医APP！'});
-                        return;
-                    }
-                    else{
-                        var code=$this.attr("code-data");
-                        NativeCallAction.method("go_product_detail",code);
-                    }
-                });
-            });
-
-            //跳转到商城首页
-            $(".goMallbtn").on("click", function () {
-                if (!inApp){
-                    $.modalAlert({message:'请先下载并进入掌上糖医APP！'});
-                    return;
-                }else{
-                    NativeCallAction.method("page-mall",'');
-                }
-            });
-        }
-        if(SystemUtil.getUrlParam("userInfo")){
-            initFn();
-            $(".goMallbtn").hide();
-        }
-    });
+            }
+        });
+})        
 </script>
 </body>
 </html>
