@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="tracker-id" content="ceshi2">
+    <title>谁是控糖达人？饮食篇</title>
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="../border.css">
+    <link rel="stylesheet" href="../../css/ceshi2.css">
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #fcd85c;
+            background-image: url(../img/p2/bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .p3-wrapper{margin-top:50%;font-size:16px;margin-left:5%}.p3-wrapper .section1 p:nth-child(3){color:#b41315}.p3-wrapper .section2 p:nth-child(4){color:#b41315}.p3-wrapper .section3 p:nth-child(4){color:#b41315}.p3-wrapper .section4 p:nth-child(5){color:#b41315}.p3-wrapper .section5 p:nth-child(3){color:#b41315}.btns{padding-top:10%;padding-left:10%;margin:0 auto}.btns a img{width:80%;margin-bottom:5%}.p2-wrapper{margin-top:50%;font-size:16px;margin-left:5%;color:#333}.p2-wrapper .title{font-size:22px}.p2-wrapper .title:nth-child(3){margin-top:-20px}.p2-wrapper .btns a img{display:inline-block;width:42%}.p2-wrapper .btns a .m-r{margin-right:10%;margin-left:-5%}
+        .questions li {
+            list-style: none;
+            margin-right: 5%;
+            background-image: url(../img/p2/select.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 50%;
+            padding-top: 4%;
+            padding-left: 8%;
+            padding-bottom: 4%;
+            margin-bottom: 20px;
+        }
+        .questions li{position:relative}.questions li span{display:inline-block;position:absolute;display:none;right:10%}.questions li span img{width:50%}
+    </style>
+</head>
+<body>
+<div class="p2-wrapper">
+    <p class="tip">5/5（共5题，每题20分）</p>
+    <p class="title">q5.以下哪种水产，不适合</p>
+    <p class="title">糖友吃？</p>
+    <div class="questions">
+        <li>A&nbsp;&nbsp;&nbsp;鳕鱼<span class="click"><img src="../img/p2/click.png" alt=""></span></li>
+        <li>B&nbsp;&nbsp;&nbsp;螃蟹<span class="click"><img src="../img/p2/click.png" alt=""></span></li>
+        <li>C&nbsp;&nbsp;&nbsp;牡蛎<span class="click"><img src="../img/p2/click.png" alt=""></span></li>
+        <li>D&nbsp;&nbsp;&nbsp;泥鳅<span class="click"><img src="../img/p2/click.png" alt=""></span></li>
+    </div>
+    <div class="btns">
+        <a  href="s1.html"><img class="m-r" src="../img/p2/prev.png" alt=""></a>
+        <a href="s2.html"><img src="../img/p2/next.png" alt=""></a>
+    </div>
+</div>
+
+<script src="../jquery.js"></script>
+<script src="../dom.js"></script>
+<script src="../common.js"></script>
+<script src="http://static.91jkys.com/telescope/build/Telescope.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.questions li ').click(function () {
+            $(this).children('span').show()
+            $(this).siblings().children('span').hide()
+        })
+    })
+</script>
+</body>
+</html>

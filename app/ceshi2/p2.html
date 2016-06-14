@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="tracker-id" content="ceshi2">
+    <title>谁是控糖达人？饮食篇 2</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="border.css">
+    <link rel="stylesheet" href="css/ceshi2.css">
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #fcd85c;
+            background-image: url(img/p2/bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 999;
+        }
+        .p3-wrapper{margin-top:50%;font-size:16px;margin-left:5%}.p3-wrapper .section1 p:nth-child(3){color:#b41315}.p3-wrapper .section2 p:nth-child(4){color:#b41315}.p3-wrapper .section3 p:nth-child(4){color:#b41315}.p3-wrapper .section4 p:nth-child(5){color:#b41315}.p3-wrapper .section5 p:nth-child(3){color:#b41315}.btns{padding-top:10%;padding-left:10%;margin:0 auto}.btns a img{width:80%;margin-bottom:5%}.p2-wrapper{margin-top:50%;font-size:16px;margin-left:5%;color:#333}.p2-wrapper .title{font-size:22px}.p2-wrapper .title:nth-child(3){margin-top:-20px}.p2-wrapper .btns a img{display:inline-block;width:42%}.p2-wrapper .btns a .m-r{margin-right:10%;margin-left:-5%}
+        .questions li {
+            list-style: none;
+            margin-right: 5%;
+            background-image: url(img/p2/select.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 50%;
+            padding-top: 4%;
+            padding-left: 8%;
+            margin-left: 6%;
+            margin-right: 10%;
+            padding-bottom: 4%;
+            margin-bottom: 20px;
+        }
+        .questions li{position:relative}.questions li span{display:inline-block;position:absolute;display:none;right:10%}.questions li span img{width:50%}
+        body .pop{top:0;left:0;text-align:center;padding-bottom:30%;position:fixed}body .pop .main{margin-top:-170px}body .pop .circle{position:absolute;top:10%;left:10%}body .pop .circle p{position:absolute;left:38%;top:-8%;font-weight:700;font-size:24px;color:#fff}body .pop .circle img{width:50%}body .pop ul{list-style:none;position:absolute;top:8%;right:20%;text-align:center}body .pop ul li{display:inline-block}body .pop ul li span{display:block;color:#fff}body .pop ul li strong{color:#dc4d4f;background-color:#fff;display:block;padding:10px;margin-top:10px;border-radius:2px}body .pop .cup{display:inline-block;width:84%}body .pop .btns a img{width:30%}body .pop .text{color:#dc4d4f;font-size:14px}
+        .pop {
+            top: 120px !important;
+            display: none;
+        }
+        .mask {
+            
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.6);
+            z-index: 99;
+            transition: .2s ease;
+        }
+        .mask-leave {
+            background-color: rgba(0,0,0,0);
+        }
+        .mask-enter {
+            position: fixed;
+        }
+        .main {
+            /*height: 464.22px;
+            overflow: hidden;*/
+        }
+        .click-s {
+            display: inline-block !important;
+        }
+        .questions-bg {
+            background-image: url(img/p2/click.png);
+        }
+        .pop .btns {
+            margin-left: -10%;
+        }
+        .change-text {
+            width: 40%;
+            margin-left: 30%;
+        }
+    </style>
+</head>
+<body>
+<div class="mask mask-leave">
+    <div class="p2-wrapper">
+    <div class="main">
+        <!-- sec1 -->
+    <div class="sec1" id="sec1">
+        <p class="tip">5/5（共5题，每题20分）</p>
+    <p class="title">q5.以下哪种水产，不适合</p>
+    <p class="title">糖友吃？</p>
+    <div class="questions questions1">
+        <li>A玉米<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li class="ab">B糯米<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>C薏米<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>D小米<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+    </div>
+    <div class="btns">
+        <a  href="s1.html"><img class="m-r" src="img/p2/prev.png" alt=""></a>
+        <a href="#sec2" class="to2"><img src="img/p2/next.png" alt=""></a>
+    </div>
+    </div>
+    <!-- sec2 -->
+    <div class="sec2" id="sec2" style="display:none;">
+        <p class="tip">5/5（共5题，每题20分）</p>
+    <p class="title">q5.以下哪种水产，不适合</p>
+    <p class="title">糖友吃？</p>
+    <div class="questions questions2">
+        <li>A白菜<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>B茄子<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>C香椿<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>D冬瓜<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+    </div>
+    <div class="btns">
+        <a  href="#sec1" class="to1"><img class="m-r" src="img/p2/prev.png" alt=""></a>
+        <a href="#sec3" class="to3"><img src="img/p2/next.png" alt=""></a>
+    </div>
+    </div>
+    <!-- sec3 -->
+    <div class="sec3" id="sec3" style="display:none;>
+        <p class="tip">5/5（共5题，每题20分）</p>
+    <p class="title">q5.以下哪种水产，不适合</p>
+    <p class="title">糖友吃？</p>
+    <div class="questions">
+        <li>A香蕉<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>B苹果<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>C草莓<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>D菠萝<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+    </div>
+    <div class="btns">
+        <a  href="#sec2" class="to2"><img class="m-r" src="img/p2/prev.png" alt=""></a>
+        <a href="#sec4" class="to4"><img src="img/p2/next.png" alt=""></a>
+    </div>
+    </div>
+    <!-- sec4 -->
+    <div class="sec4" id="sec4" style="display:none;>
+        <p class="tip">5/5（共5题，每题20分）</p>
+    <p class="title">q5.以下哪种水产，不适合</p>
+    <p class="title">糖友吃？</p>
+    <div class="questions">
+        <li>A鸡肉<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>B牛肉<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>C兔肉<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>D腊肉<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+    </div>
+    <div class="btns">
+        <a  href="#sec3" class="to3"><img class="m-r" src="img/p2/prev.png" alt=""></a>
+        <a href="#sec5" class="to5"><img src="img/p2/next.png" alt=""></a>
+    </div>
+    </div>
+    <!-- sec5 -->
+    <div class="sec5" id="sec5" style="display:none;">
+        <p class="tip">5/5（共5题，每题20分）</p>
+    <p class="title">q5.以下哪种水产，不适合</p>
+    <p class="title">糖友吃？</p>
+    <div class="questions">
+        <li>A鳕鱼<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>B螃蟹<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>C牡蛎<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+        <li>D泥鳅<span class="click"><img src="img/p2/click.png" alt=""></span></li>
+    </div>
+    <div class="btns">
+        <a  href="#sec4" class="to4"><img class="m-r" src="img/p2/prev.png" alt=""></a>
+        <a href="javascript:;"><img class="submit" src="img/p2/submit.png" alt=""></a>
+    </div>
+    </div>
+    </div>
+
+    <!-- pop -->
+    
+    <div class="pop">
+        <img class="cup" src="img/p2/alert.png" alt="">
+        <div class="circle">
+            <p>100</p>
+            <img src="img/p2/circle.png" alt="">
+        </div>
+        <ul>
+            <li><span>答对</span><strong class="count">5</strong></li>
+            <li><span>答错</span><strong class="count-r">0</strong></li>
+        </ul>
+        <div class="main">
+            <div class="text">
+                <p class="change-text">hahah</p>
+            </div>
+            <div class="btns">
+                <a href="p2.html"><img src="img/p2/btn1.png" alt=""></a>
+                <a href="p3.html" ><img src="img/p2/btn2.png" alt="" class="submit"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="jquery.js"></script>
+<script src="dom.js"></script>
+<script src="common.js"></script>
+<script src="main.js"></script>
+<script src="http://static.91jkys.com/telescope/build/Telescope.js"></script>
+
+<script>
+
+</script>
+</body>
+</html>
